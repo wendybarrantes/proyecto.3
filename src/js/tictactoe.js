@@ -9,15 +9,18 @@ let casilla8 = document.getElementById("casilla8")
 let casilla9 = document.getElementById("casilla9")
 
 let casillas=[casilla1,casilla2,casilla3,casilla4,casilla5,casilla6,casilla7,casilla8,casilla9]
-let x = `<img src = ${"https://img.icons8.com/?size=100&id=110870&format=png&color=000000"}>`
-let o = `<img src = ${"https://img.icons8.com/?size=100&id=110864&format=png&color=000000"}>`
+let x = `<img src = ${"https://img.icons8.com/?size=100&id=LNNeDNmm6Io1&format=png&color=000000"}>`
+let o = `<img src = ${"https://img.icons8.com/?size=100&id=BUYcpnTFpNW1&format=png&color=000000"}>`
 function movimientoHumano() {
 casillas.forEach((casilla)=>casilla.addEventListener("click",()=> {
-    if (casilla.innerHTML == "") {
+                     //cualquier casilla que toque va a pasar lo siguiente
+
+    if (casilla.innerHTML === "") {
         casilla.innerHTML = x
+        movimientoPc()
     }
-    movimientoPc()
- })) 
+
+})) 
 }
 
 function movimientoPc() {
@@ -26,7 +29,7 @@ function movimientoPc() {
     let casillasVacias = casillas.filter((casilla)=> casilla.innerHTML == "");
     let aleatorio = Math.floor(Math.random() * casillasVacias.length);
     casillasVacias[aleatorio].innerHTML = o
- },"500");
+ },"300");
  
 }
 movimientoHumano()

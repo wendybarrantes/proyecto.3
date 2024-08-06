@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
-    
 }
 
 body{
@@ -27,6 +26,7 @@ body{
 
 .casilla{
     position: relative;
+    text-align: center;
     border: 1px solid #fff;
     cursor: pointer;
     font-size: 100px ;
