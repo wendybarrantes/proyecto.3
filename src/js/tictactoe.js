@@ -9,15 +9,7 @@ let casilla8 = document.getElementById("casilla8")
 let casilla9 = document.getElementById("casilla9")
 let casillas=[casilla1,casilla2,casilla3,casilla4,casilla5,casilla6,casilla7,casilla8,casilla9]
 let btnReinicio = document.getElementById("btnReinicio")
-// casillas[0].innerHTML="0"
-// casillas[1].innerHTML="1"
-// casillas[2].innerHTML="2"
-// casillas[3].innerHTML="3"
-// casillas[4].innerHTML="4"
-// casillas[5].innerHTML="5"
-// casillas[6].innerHTML="6"
-// casillas[7].innerHTML="7"
-// casillas[8].innerHTML="8"
+
 let x = `<img src = ${"https://emojigraph.org/media/htc/cross-mark_274c.png"} alt="X">`
 let o = `<img src = ${"https://emojigraph.org/media/htc/hollow-red-circle_2b55.png"} alt="O">`
 let juegoFinalizado = false
@@ -63,11 +55,11 @@ function movimientoHumano() {
                 if(casillas[posicion1].innerHTML.includes("X")){
                     marcadorDelJugador++
                     localStorage.setItem("jugador",marcadorDelJugador)
-                    alert("VICTORIA JUGADOR")
+                    alerta("Gana el jugador","success")
                 }else if(casillas[posicion1].innerHTML.includes("O")){
                     marcadorDeCompu++
                     localStorage.setItem("compu",marcadorDeCompu)
-                    alert("VICTORIA COMPU")
+                    alerta("Gana la compu","success")
                 }
                 marcador()
             }
@@ -79,7 +71,7 @@ function movimientoHumano() {
     function validarEmpate() {
         if(contadorMovimientos===9 && !juegoFinalizado){
             juegoFinalizado=true
-            alert("EMPATE")
+            alerta("EMPATE","info")
         }
     }
     let marcadorDelJugador = localStorage.getItem("jugador") || 0
@@ -98,7 +90,29 @@ function reiniciarJuego(){
     })
     contadorMovimientos = 0
     juegoFinalizado = false
+
 }
+
+/*
+    Implementaciòn del sweetalert para mostrar alertas personalizadas, se 
+    utiliza el import del js y css que nos brinda sweet alert, ambos se colocan en el HTML de la página
+    la estructura general de la alerta, la da por defecto sweet alert
+
+    por parametro se le pasa lo que sería el titulo y el icono para que esta funciòn sea totalmente reutilizable
+*/
+function alerta(title,icon) {
+    Swal.fire({
+        title: title,
+        icon: icon,
+        showConfirmButton: false,
+        timer:1000,
+        position: "top"
+      });
+}
+
+
+
+
 btnReinicio.addEventListener("click",reiniciarJuego)
 
 

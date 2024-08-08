@@ -4,10 +4,20 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.marcador{
+    position: absolute;
+    left: 3%;
+    top: 10%;
+}
+.jugador{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+}
 .marcador, #marcador-computadora, #marcador-jugador,#cp,#hm{
     font-size: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
     
 }
