@@ -5,6 +5,9 @@
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
 }
+#marcador-jugador,#marcador-computadora{
+    font-size: 20px;
+}
 
 body{
     display: flex;
