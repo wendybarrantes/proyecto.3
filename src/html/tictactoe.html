@@ -6,9 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/src/css/tictactoe.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-light@4/light.css" rel="stylesheet"> <!--IMPORTACION DEL SWEET ALERT-->
 </head>
 <body>
+
+    <div class="marcador">
+        <h2>Contador de victorias</h2>
+        <h5 id="cp">Maquina</h5>
+        <p id="marcador-computadora" ></p>
+        <div class="jugador"> 
+        <h5 id="hm">Jugador</h5>
+        <p id="marcador-jugador" >0</p>
+    </div>
+    </div> 
 
     <div class="container">
         <div class="casilla" id="casilla1"></div>
@@ -22,6 +34,10 @@
         <div class="casilla" id="casilla9"></div>
     </div>
 
+    <button id="btnReinicio">REINICIAR</button>
 </body>
 <script src="/src/js/tictactoe.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script> <!--IMPORTACION DEL SWEET ALERT-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script> <!--IMPORTACION DEL SWEET ALERT-->
+
 </html>
