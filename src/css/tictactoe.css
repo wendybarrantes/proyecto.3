@@ -6,7 +6,7 @@
 }
 .marcador{
     position: absolute;
-    left: 3%;
+    left: 5%;
     top: 10%;
 }
 .jugador{
@@ -87,7 +87,27 @@ body{
 .casilla:hover{
     background-color: rgba(0, 0, 0, 0.1);
 }
-
+.btnReinicio{
+    background-color: #f70f46;
+    color: white;
+    border: 1px solid #333;
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.btnMarcador{
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    margin-top: 120px;
+    border-radius: 20px;
+    background-color: #f70f46;
+    color: #fff;
+    height: 70px;
+    width: 300px;
+    border: 1px solid #333;
+}
 
 @media screen and (max-width: 700px){
     .container{

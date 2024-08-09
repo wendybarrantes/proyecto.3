@@ -9,6 +9,7 @@ let casilla8 = document.getElementById("casilla8")
 let casilla9 = document.getElementById("casilla9")
 let casillas=[casilla1,casilla2,casilla3,casilla4,casilla5,casilla6,casilla7,casilla8,casilla9]
 let btnReinicio = document.getElementById("btnReinicio")
+let btnMarcador = document.getElementById("btnMarcador")
 
 let x = `<img src = ${"https://emojigraph.org/media/htc/cross-mark_274c.png"} alt="X">`
 let o = `<img src = ${"https://emojigraph.org/media/htc/hollow-red-circle_2b55.png"} alt="O">`
@@ -58,8 +59,8 @@ function movimientoHumano() {
                     alerta("Gana el jugador","success")
                 }else if(casillas[posicion1].innerHTML.includes("O")){
                     marcadorDeCompu++
-                    localStorage.setItem("compu",marcadorDeCompu)
-                    alerta("Gana la compu","success")
+                    localStorage.setItem("maquina",marcadorDeCompu)
+                    alerta("Gana la maquina","success")
                 }
                 marcador()
             }
@@ -75,7 +76,7 @@ function movimientoHumano() {
         }
     }
     let marcadorDelJugador = localStorage.getItem("jugador") || 0
-    let marcadorDeCompu = localStorage.getItem("compu") || 0
+    let marcadorDeCompu = localStorage.getItem("maquina") || 0
     function marcador(){
         let jugador = document.getElementById("marcador-jugador")
         let compu = document.getElementById("marcador-computadora")
@@ -92,6 +93,17 @@ function reiniciarJuego(){
     juegoFinalizado = false
 
 }
+function reiniciaMarcador() {
+    marcadorDelJugador = 0
+    marcadorDeCompu = 0
+    localStorage.setItem("jugador",0)
+    localStorage.setItem("maquina",0)
+    let jugador = document.getElementById("marcador-jugador")
+    let compu = document.getElementById("marcador-computadora")
+    jugador.innerHTML = marcadorDelJugador
+    compu.innerHTML = marcadorDeCompu
+}
+
 
 /*
     Implementaciòn del sweetalert para mostrar alertas personalizadas, se 
@@ -114,7 +126,7 @@ function alerta(title,icon) {
 
 
 btnReinicio.addEventListener("click",reiniciarJuego)
-
+btnMarcador.addEventListener("click",reiniciaMarcador)
 
 marcador()
 movimientoHumano()
